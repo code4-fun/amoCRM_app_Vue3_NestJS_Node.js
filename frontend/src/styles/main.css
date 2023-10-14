@@ -1,0 +1,49 @@
+:root {
+  --primary-color: hsl(235, 50%, 67%);
+  --primary-color-hover: hsl(235, 50%, 73%);
+  --danger-color: hsl(351, 100%, 70%);
+  --danger-color-hover: hsl(351, 100%, 76%);
+}
+*,
+::before,
+::after{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+a.router-link-active {
+  color: hsl(235, 100%, 60%);
+}
+ul,
+ol,
+li{
+  list-style: none;
+}
+img{
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-weight: inherit;
+  font-size: inherit;
+}
+html,
+body,
+#app{
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2c3e50;
+  background: #eeeeee;
+  font-family: 'Montserrat', sans-serif;
+}
