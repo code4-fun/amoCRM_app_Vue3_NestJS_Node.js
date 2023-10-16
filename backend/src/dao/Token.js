@@ -1,8 +1,8 @@
-import mongoose from 'mongoose'
+import {Schema, model} from 'mongoose'
 
-const Token = new mongoose.Schema({
+const Token = new Schema({
   access_token: {type: String, required: true},
   refresh_token: {type: String, required: false},
 })
 
-export default mongoose.model('Token', Token)
+export default model('Token', Token)

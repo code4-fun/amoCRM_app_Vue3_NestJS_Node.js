@@ -9,7 +9,11 @@
           <router-link to='/home'>Home</router-link>
           <router-link to='/main'>Main</router-link>
         </div>
-        <div class="header_right"></div>
+        <div class="header_right">
+          <a href="https://www.amocrm.ru/oauth?client_id=238be790-7c96-43b1-bbe6-b768d6a89244&state=hello&mode=popup"
+             class="signin_link"
+             target="_blank">Sign In</a>
+        </div>
       </div>
     </header>
 

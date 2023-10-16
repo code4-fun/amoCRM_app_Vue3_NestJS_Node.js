@@ -8,6 +8,8 @@
 
 - amoCRM API
 
+- Nest.js
+
 - Node.js
 
 - Express
@@ -16,3 +18,4 @@
 
 ## Доступ
 
+ngrok: https://66d9-146-120-78-214.ngrok-free.app/main

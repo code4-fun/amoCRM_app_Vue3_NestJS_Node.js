@@ -5,27 +5,30 @@ import fetch from 'node-fetch'
 class AmoCrmService {
   // fetches access token and refresh token and stores them to database
   async fetchToken(params){
-    console.log(params)
     if(params.code){
-      const response = await fetch(`${process.env.BASE_URL}/oauth2/access_token`, {
-        method: 'POST',
-        body: JSON.stringify({
-          client_id: process.env.CLIENT_ID,
-          client_secret: process.env.CLIENT_SECRET,
-          grant_type: "authorization_code",
-          code: params.code,
-          redirect_uri: process.env.REDIRECT_URI
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      const data = await response.json()
-      await Token.deleteMany({})
-      await Token.create({
-        access_token: data.access_token,
-        refresh_token: data.refresh_token
-      })
+      try{
+        const response = await fetch(`${process.env.BASE_URL}/oauth2/access_token`, {
+          method: 'POST',
+          body: JSON.stringify({
+            client_id: process.env.CLIENT_ID,
+            client_secret: process.env.CLIENT_SECRET,
+            grant_type: "authorization_code",
+            code: params.code,
+            redirect_uri: process.env.REDIRECT_URI
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        const data = await response.json()
+        await Token.deleteMany({})
+        await Token.create({
+          access_token: data.access_token,
+          refresh_token: data.refresh_token
+        })
+      } catch(e){
+        console.log(e)
+      }
     }
   }
 

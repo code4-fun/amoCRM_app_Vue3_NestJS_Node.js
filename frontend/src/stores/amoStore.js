@@ -15,11 +15,11 @@ export const useAmoStore = defineStore('amoStore', () => {
         id: res,
         type: entityName
       })
+      error.value = ''
     } catch(e){
       error.value = e
     } finally {
       loading.value = false
-      error.value = ''
     }
   }
 
