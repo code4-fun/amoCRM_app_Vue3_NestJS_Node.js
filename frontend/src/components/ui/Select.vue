@@ -1,20 +1,24 @@
 <script  setup lang="ts">
-const emits = defineEmits(['update:modelValue'])
-const props = defineProps({
+import {ISortOptions} from '@/types'
+
+const emits = defineEmits<{
+  'update:modelValue': [value: string]
+}>()
+
+withDefaults(defineProps<{
   modelValue: {
     type: String
   },
-  options: {
-    type: Array,
-    default: () => []
-  },
+  options: ISortOptions[],
   defaultValue: {
     type: String
   }
+}>(), {
+  options: () => []
 })
 
-const changeHandler = e => {
-  emits('update:modelValue', e.target.value)
+const changeHandler = (e: Event) => {
+  emits('update:modelValue', (e.target as HTMLSelectElement).value)
 }
 </script>
 

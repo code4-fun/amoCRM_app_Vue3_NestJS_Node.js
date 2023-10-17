@@ -1,6 +1,9 @@
-<script setup>
-const emit = defineEmits(['update:modelValue'])
-const props = defineProps({
+<script setup lang="ts">
+const emits = defineEmits<{
+  'update:modelValue': [value: string]
+}>()
+
+defineProps({
   modelValue: {
     type: String,
     default: ''
@@ -17,8 +20,8 @@ const props = defineProps({
   }
 })
 
-const updateValue = (e) => {
-  emit('update:modelValue', e.target.value)
+const updateValue = (e: Event) => {
+  emits('update:modelValue', (e.target as HTMLInputElement).value)
 }
 </script>
 

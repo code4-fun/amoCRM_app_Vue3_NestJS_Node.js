@@ -1,6 +1,9 @@
 <script setup lang="ts">
-const emit = defineEmits(['click'])
-const props = defineProps({
+const emits = defineEmits<{
+  click: [value: string]
+}>()
+
+defineProps({
   color: {
     type: String,
     default: 'primary'
@@ -22,7 +25,7 @@ const props = defineProps({
 })
 
 const clickHandler = () => {
-  emit('click')
+  emits('click')
 }
 </script>
 

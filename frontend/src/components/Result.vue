@@ -1,11 +1,9 @@
 <script setup lang="ts">
-const props = defineProps({
-  entity: {
-    type: Object,
-    required: true,
-    default: () => {}
-  }
-})
+import {IEntity} from '@/types'
+
+defineProps<{
+  entity: IEntity
+}>()
 </script>
 
 <template>

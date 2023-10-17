@@ -16,10 +16,11 @@ import Select from '@/components/ui/Select.vue'
 import Button from '@/components/ui/Button.vue'
 import {ref} from 'vue'
 import {useAmoStore} from '@/stores/amoStore'
+import {ISortOptions} from '@/types'
 
 const amoStore = useAmoStore()
 const selectedOption = ref('')
-const sortOptions = ref([
+const sortOptions = ref<ISortOptions[]>([
   {value: '', name: 'Не выбрано', disabled: true},
   {value: 'leads', name: 'Сделка'},
   {value: 'contacts', name: 'Контакт'},

@@ -1,10 +1,11 @@
 import {defineStore} from 'pinia'
 import {ref} from 'vue'
 import {createEntityApi} from '../api/amocrm'
+import {IEntity} from '@/types'
 
 export const useAmoStore = defineStore('amoStore', () => {
-  const entities = ref([])
-  const loading = ref(false)
+  const entities = ref<IEntity[]>([])
+  const loading= ref(false)
   const error = ref('')
 
   const createEntity = async({entity, entityName}) => {
