@@ -18,4 +18,4 @@
 
 ## Доступ
 
-ngrok: https://66d9-146-120-78-214.ngrok-free.app/main
+ngrok: https://ed03-146-120-78-214.ngrok-free.app
