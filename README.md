@@ -4,6 +4,8 @@
 
 - Pinia
 
+- TypeScript
+
 - Vite
 
 - amoCRM API
