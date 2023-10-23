@@ -1,4 +1,4 @@
-import {Controller, Get, Query} from '@nestjs/common';
+import {Controller, Get, Query, Res} from '@nestjs/common';
 import {AmocrmService} from "./amocrm.service";
 
 @Controller('api')
@@ -6,9 +6,9 @@ export class AmocrmController {
   constructor(private readonly amocrmService: AmocrmService) {}
 
   @Get('/auth')
-  async auth(@Query('code') code: string){
+  async auth(@Query('code') code: string, @Res() res){
     await this.amocrmService.auth(code)
-    return 'success'
+    res.redirect(`${process.env.CLIENT_URL}/main`)
   }
 
   @Get('/contacts')

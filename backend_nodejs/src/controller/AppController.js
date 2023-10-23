@@ -4,7 +4,7 @@ class AppController{
   async auth(req, res){
     try {
       await AmoCrmService.fetchToken(req.query)
-      res.status(201).json('success')
+      res.redirect(`${process.env.CLIENT_URL}/main`)
     } catch (e){
       res.status(500).json(e)
     }
